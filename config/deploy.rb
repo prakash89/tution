@@ -25,6 +25,44 @@ set :whenever_roles, :all
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 set :log_level, :debug
 
+namespace :sidekiq do
+
+  set :sidekiq_cmd, "bundle exec sidekiq"
+  set :sidekiqctl_cmd, "bundle exec sidekiqctl"
+  set :sidekiq_pid, -> {File.join(current_path, 'tmp', 'pids', 'sidekiq.pid')}
+  set :sidekiq_role, :app
+  set :sidekiq_processes, 1
+  set :sidekiq_timeout, 10
+
+  desc "Quiet sidekiq (stop accepting new work)"
+  task :quiet do
+    on roles(:app) do
+    end
+  end
+
+  desc "Stop sidekiq"
+  task :stop do
+    on roles(:app) do
+    end
+  end
+
+  desc "Start sidekiq"
+  task :start do
+    on roles(:app) do
+     rails_env = fetch(:rack_env, fetch(:rails_env, fetch(:stage)))
+   end
+ end
+
+ desc "Restart sidekiq"
+ task :restart do
+  on roles(:app) do
+   :stop
+   :start
+ end
+end
+
+end
+
 namespace :deploy do
 
   desc 'Restart application'
