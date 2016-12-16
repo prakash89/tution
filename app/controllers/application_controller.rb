@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def authenticate_admin!
-    unless (current_user.has_role? :Admin)
-      redirect_to root_path, notice: "You don't have permission to view this page"
+    unless ((current_user.present?) && (current_user.has_role? :Admin))
+      redirect_to root_path
     end
   end
 

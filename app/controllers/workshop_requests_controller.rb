@@ -1,4 +1,5 @@
 class WorkshopRequestsController < ApplicationController
+  before_filter :authenticate_admin!, only: [:index, :destroy]
   def index
     @workshop_requests = WorkshopRequest.all
   end
@@ -25,6 +26,6 @@ class WorkshopRequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:workshop_request).permit(:name, :email, :telephone, :collage)
+    params.require(:workshop_request).permit(:name, :email, :telephone, :collage, :percentage)
   end
 end

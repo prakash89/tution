@@ -1,7 +1,7 @@
 <%= render :partial => "header" %>
 <div class="container fix-width-container">
   <div class="well" style="width: 100%;margin-top: 150px;height: auto;">
-    <h1 class='align-center-text'>Create New Event</h1>
+    <h1 class='align-center-text'>Create New Class</h1>
     <br>
     <%= form_for :event, url: events_path, method: :post do |f| %>
       <% if @event.errors.any? %>

@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse fill-the-gap" id="myNavbar">
           <ul id="nav" class="nav navbar-nav navbar-custom-overide">
             <li><a href="" onclick="newDoc()">Inspire Academy</a></li>
-            <li class="alingn-header-ele"><a href="#features">Tutorials</a></li>
+            <li class="alingn-header-ele"><a href="#features">Courses</a></li>
             <li class="alingn-header-ele"><a href="#hiring">Careers</a></li>
             <li><a href="#works">Gallery</a></li>
             <li><a href="#team">Team</a></li>
@@ -69,7 +69,7 @@
         <div class="carousel-inner" role="listbox">
 
           <!-- single slide -->
-          <div class="item active" style="background-image: url(/assets/banner.jpg);">
+          <div class="item active" style="background-image: url(/assets/inspire.jpg);">
             <div class="carousel-caption">
               <h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated"><a href="<%= new_workshop_request_path %>">Workshop Request!</a></h2>
 
@@ -132,10 +132,23 @@
         <div class="row">
 
           <div class="sec-title text-center mb50 wow bounceInDown animated" data-wow-duration="500ms">
-            <h2>Tutorials</h2>
+            <h2>Courses</h2>
             <div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
           </div>
 
+          <div class="col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="fa fa-pencil fa-2x"></i>
+              </div>
+
+              <div class="service-desc">
+                <a href="<%= user_events_path %>"><h3>Classes</h3></a>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+              </div>
+            </div>
+          </div>
+          
           <!-- service item -->
           <div class="col-md-6 wow fadeInLeft" data-wow-duration="500ms">
             <div class="service-item">
@@ -145,9 +158,9 @@
 
               <div class="service-desc">
                 <% if current_user.present? %>
-                  <a href="<%= documents_path %>"><h3>Documents</h3></a>
+                  <a href="<%= documents_path %>"><h3>Syllabus</h3></a>
                 <% else %>
-                  <a href="<%= new_user_registration_path %>"><h3>Documents</h3></a>
+                  <a href="<%= new_user_registration_path %>"><h3>Syllabus</h3></a>
                 <% end %>
                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
               </div>
@@ -156,18 +169,6 @@
           <!-- end service item -->
 
           <!-- service item -->
-          <div class="col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="fa fa-pencil fa-2x"></i>
-              </div>
-
-              <div class="service-desc">
-                <a href="<%= user_events_path %>"><h3>Events</h3></a>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
-              </div>
-            </div>
-          </div>
 
         </div>
       </div>

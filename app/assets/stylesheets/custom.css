@@ -51,13 +51,13 @@
   }
 }
 
-.field_with_errors {
+/*.field_with_errors {
   @extend .control-group;
   @extend .error;
  }
  textarea {
     resize: none;
-}
+}*/
 
 /*.navbar {
     margin-bottom: 0px;

@@ -15,6 +15,7 @@
             <th class="name">Email</th>
             <th class="document-title" style="padding-right:40px;">Telephone</th>
             <th class="status">Collage</th>
+            <th class="status">Percentage(10th/SSLC)</th>
             <th class="action">Action</th>
           </tr>
         </thead>
@@ -25,6 +26,7 @@
               <td><%= request.email %></td>
               <td><%= request.telephone %></td>
               <td><%= request.collage %></td>
+              <td><%= request.percentage %></td>
               <td><%= link_to 'Delete', workshop_request_path(request), method: :delete, data:{confirm: 'Are you want to delete request'}, :class=> "text-color-fix" %>
               </td>
             </tr>

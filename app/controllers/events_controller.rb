@@ -1,10 +1,12 @@
 class EventsController < ApplicationController
+
+  before_filter :authenticate_admin!, only: [:index, :edit, :update, :show, :destroy]
   def index
-    @events = Event.all
+    @events = Event.order("updated_at DESC")
   end
 
   def user_index
-    @events = Event.all
+    @events = Event.order("updated_at DESC")
   end
 
   def new

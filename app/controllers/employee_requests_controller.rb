@@ -1,4 +1,5 @@
 class EmployeeRequestsController < ApplicationController
+  before_filter :authenticate_admin!, only: [:index, :show, :destroy]
 
   def index
     @employee_requests = EmployeeRequest.all

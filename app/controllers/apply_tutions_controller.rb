@@ -1,5 +1,7 @@
 class ApplyTutionsController < ApplicationController
 
+  before_filter :authenticate_admin!, only: [:index, :com_index, :show, :destroy]
+
   def index
     @tutions = []
     @events = Event.where("exam_type=?", "Acadamic")

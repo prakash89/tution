@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161110064129) do
+ActiveRecord::Schema.define(version: 20161216070042) do
 
   create_table "apply_tutions", force: :cascade do |t|
     t.string   "name"
@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(version: 20161110064129) do
     t.string   "telephone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "percentage"
   end
 
 end

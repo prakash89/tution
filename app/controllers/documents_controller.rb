@@ -1,6 +1,7 @@
 class DocumentsController < ApplicationController
 
   before_filter :authenticate_user!
+  before_filter :authenticate_admin!, only: [:create, :destroy]
 
   def index
     @document = Document.new
