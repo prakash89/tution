@@ -1,6 +1,8 @@
 set :stage, :production
+set :unicorn_rack_env, 'production'
 set :branch, :master
-set :deploy_to, '/u01/apps/qwinix/st-bb3'
+set :deploy_to, '/u01/apps/prakash/tution/'
+set :log_level, :debug
 
 # Extended Server Syntax
 # ======================
@@ -8,10 +10,10 @@ set :deploy_to, '/u01/apps/qwinix/st-bb3'
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-role :app, %w{deploy@st.bb3.qwinix.io}
-role :web, %w{deploy@st.bb3.qwinix.io}
-role :db, %w{deploy@st.bb3.qwinix.io}
-server 'st.bb3.qwinix.io', roles: %w{:web, :app, :db}, user: 'deploy'
+role :app, %w{deploy@35.164.196.162}
+role :web, %w{deploy@35.164.196.162}
+role :db, %w{deploy@35.164.196.162}
+server '35.164.196.162', roles: %w{:web, :app, :db}, user: 'deploy'
 
 set :ssh_options, {
    #verbose: :debug,
