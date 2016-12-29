@@ -89,4 +89,3 @@ Rails.application.configure do
     :password =>  ENV['SENDGRID_PASSWORD']
   }
 end
-end
