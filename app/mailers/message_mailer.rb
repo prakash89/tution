@@ -5,12 +5,12 @@ class MessageMailer < ActionMailer::Base
 
   def new_message(message, from)
     @from = from
-    @to = "prakashthonnur@gmail.com"
+    @to = "pradeeppumadi@gmail.com"
     @message = message
     @phone_number = @message.phone_number
     @body = @message.content
     @name = @message.name
-    mail(:from => @from, :to => @to, :subject => 'Contact information', :body => @body, :name => @name, :phone_number => @phone_number )
+    mail(:from => @from, :to => @to, :subject => 'Contact information')
   end
 
 end

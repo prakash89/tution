@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    if @message.valid?
+    if @message.valid? && @message.save
       MessageMailer.new_message(@message, message_params[:email]).deliver
       redirect_to root_path
     else
