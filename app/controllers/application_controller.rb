@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def authenticate_admin!
-    unless ((current_user.present?) && (current_user.has_role? :Admin))
+    unless ((current_user.present?) && (current_user.has_role? :admin))
       redirect_to root_path
     end
   end

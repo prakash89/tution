@@ -1,0 +1,118 @@
+<%= render :partial => "header" %>
+<div class="container fix-width-container">
+  <div class="well" style="width: 100%;margin-top: 154px;height: auto;">
+    <h1 class='align-center-text'>Billing</h1>
+    <br>
+    <%= form_for :billing, url: billings_path, html:{id: '' } do |f| %>
+    <%#= f.hidden_field :event_id, :value => params[:format] %>
+      <% if @billing.errors.any? %>
+        <div id="error_explanation">
+          <h4><%= pluralize(@billing.errors.count, "error") %> prohibited this user from being saved:</h4>
+          <ul>
+            <% @billing.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class='row fix-input-filed-center'>
+      <div class="col-sm-8 col-xs-12">
+      <div class="row">
+        <div class="form-group">
+            <div class="col-sm-12">
+              <%= f.label :name %>
+              <%= f.text_field :name, class: 'form-control' %>
+            </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <%= f.label :father_name %>
+            <%= f.text_field :father_name, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <%= f.label :cource_id %>
+            <%= f.select :cource_id, options_for_select(get_course_ids), {}, :class => "form-control"%>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <%= f.label :address %>
+            <%= f.text_field :address, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <%= f.label :amount %>
+            <%= f.text_field :amount, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <%= f.label :mode_of_payment %>
+            <%= f.select :mode_of_payment, options_for_select(get_payment_modes), {}, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row" id="js-ref-number">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <%= f.label :ref_number %>
+            <span class="ref-number-style" id="js-dd-number">(Please enter DD number here)</span>
+            <span class="ref-number-style" id="js-check-number">(Please enter Check number here)</span>
+            <span class="ref-number-style" id="js-online-number">(Please enter Online transaction number here)</span>
+            <%= f.text_field :ref_number, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="container-fluid">
+        <div class="row" style="margin-left: 80px;">
+          <div class="col-xs-6">
+            <div class="form-group">
+              <%= f.submit "Save", :class=>"btn btn-primary"  %>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="form-group">
+              <a herf="" onclick="newDoc()"class="btn btn-danger" >Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  function newDoc() {
+    window.location.assign("<%= root_url%>")
+}
+
+$(document).ready(function(){
+  $('#js-ref-number').hide();
+  $('#js-dd-number').hide();
+  $('#js-check-number').hide();
+  $('#js-online-number').hide();
+});
+</script>

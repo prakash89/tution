@@ -208,3 +208,58 @@ a:focus {
 .apply_link_style {
   color: black;
 }
+
+.ref-number-style {
+  color: red;
+}
+
+
+.invoice-text-align-left {
+    text-align: left;
+    width: 70%
+}
+
+.invoice-text-align-right {
+    text-align: left;
+    width: 13%
+}
+
+.invoice .invoice_table > thead > tr > th,
+.invoice_table > tbody > tr > th,
+.invoice_table > tfoot > tr > th,
+.invoice_table > thead > tr > td,
+.invoice_table > tbody > tr > td,
+.invoice_table > tfoot > tr > td {
+    border-top: 1px solid #000000 !important;
+}
+
+.invoice-border-left { 
+  margin-right:50px;
+}
+.push-left {
+  margin-right:100px;
+}
+.table-border-right-none {
+    border-right: none !important;
+}
+
+.invoice-th {
+    background-color: #cecece;
+}
+
+.invoice {
+    margin-top: 40px;
+}
+
+.invoice .border-invoice {
+    border: 1px solid #000000;
+}
+
+
+/*.invoice .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+border-top: 1px solid #000000;
+}*/
+
+.invoice-border-left {
+    border-left: 1px solid #000000;
+}

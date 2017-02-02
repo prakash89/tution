@@ -1,0 +1,5 @@
+<h3>Invoice </h3>
+<div> Order No. : &nbsp;&nbsp;  <%= @billing.order_number %> </div>
+<div> Invoice Date : &nbsp;&nbsp; <%= @billing.created_at.strftime("%d %b %Y") %> </div>
+<div> Payment Method : &nbsp;&nbsp;<%= @billing.mode_of_payment %> </div>
+<div class="horizantal-devider"> </div>

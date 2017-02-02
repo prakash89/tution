@@ -1,0 +1,56 @@
+<div>
+    <table>
+        <thead>
+         <tr>
+            <th class="invoice-text-align-left"><h4>Bill To:</h4> </th>
+            <th class="invoice-text-align-right"><h4>Bill From:</h4> </th>
+          </tr>
+        </thead>
+        <tr>
+           <td> 
+                
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+
+        <tr>
+          <td class="invoice-text-align-left bold"> 
+            <%= @billing.name %> S/o or D/o
+          </td>
+          <td class="invoice-text-align-right bold">
+            Inspire Acadamy
+          </td>
+        </tr>
+            
+        <tr> 
+          <td class="invoice-text-align-left">
+            <%= @billing.father_name %>
+          </td>   
+          <td class="invoice-text-align-right"> 
+            Near BM Hospital
+          </td>
+        </tr>
+
+        <tr>
+         <td class="invoice-text-align-left">
+            <%= @billing.address %>
+         </td> 
+         <td class="invoice-text-align-right"> 
+            Mysore. Karnataka.
+         </td>
+        </tr>
+
+        <tr>
+         <td class="invoice-text-align-left">
+            <%#= @billing.credit_card.billing_address["ba_state"] %> 
+         </td> 
+         <td class="invoice-text-align-right"> 
+            (996) 4316 019
+         </td>
+        </tr>
+
+    </table>
+
+</div>

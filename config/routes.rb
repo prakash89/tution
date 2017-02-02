@@ -34,6 +34,10 @@ Rails.application.routes.draw do
     get 'contact', to: 'messages#new', as: 'contact'
     post 'contact', to: 'messages#create'
 
+    resources :billings
+
+    get 'billings/:id/invoice', to: 'billings#invoice', :as => :invoice
+
   # Example resource route with options:
   #   resources :products do
   #     member do

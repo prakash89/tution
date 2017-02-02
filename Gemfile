@@ -36,6 +36,9 @@ gem "font-awesome-rails"
 # Use Unicorn as the app server
 gem 'unicorn'
 
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
