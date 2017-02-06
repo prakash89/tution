@@ -34,9 +34,15 @@ Rails.application.routes.draw do
     get 'contact', to: 'messages#new', as: 'contact'
     post 'contact', to: 'messages#create'
 
-    resources :billings
+    resources :billings do
+      collection do
+        get 'manager_index'
+      end
+    end
 
     get 'billings/:id/invoice', to: 'billings#invoice', :as => :invoice
+    get 'billings/:id/pdf_output', to: 'billings#pdf_output', :as => :pdf_output
+    get 'billings/:id/pdf_download', to: 'billings#pdf_download', :as => :pdf_download
 
   # Example resource route with options:
   #   resources :products do

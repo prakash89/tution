@@ -1,56 +1,56 @@
 <div>
-    <table>
-        <thead>
-         <tr>
-            <th class="invoice-text-align-left"><h4>Bill To:</h4> </th>
-            <th class="invoice-text-align-right"><h4>Bill From:</h4> </th>
-          </tr>
-        </thead>
-        <tr>
-           <td> 
-                
-            </td>
-            <td>
-                
-            </td>
-        </tr>
+  <table>
+    <thead>
+     <tr>
+     <th class="invoice-text-align-left"><h4>Payment To:</h4> </th>
+      <th class="invoice-text-align-right"><h4>Payment Details:</h4> </th>
+    </tr>
+  </thead>
+  <tr>
+   <td> 
 
-        <tr>
-          <td class="invoice-text-align-left bold"> 
-            <%= @billing.name %> S/o or D/o
-          </td>
-          <td class="invoice-text-align-right bold">
-            Inspire Acadamy
-          </td>
-        </tr>
-            
-        <tr> 
-          <td class="invoice-text-align-left">
-            <%= @billing.father_name %>
-          </td>   
-          <td class="invoice-text-align-right"> 
-            Near BM Hospital
-          </td>
-        </tr>
+   </td>
+   <td>
 
-        <tr>
-         <td class="invoice-text-align-left">
-            <%= @billing.address %>
-         </td> 
-         <td class="invoice-text-align-right"> 
-            Mysore. Karnataka.
-         </td>
-        </tr>
+   </td>
+ </tr>
 
-        <tr>
-         <td class="invoice-text-align-left">
-            <%#= @billing.credit_card.billing_address["ba_state"] %> 
-         </td> 
-         <td class="invoice-text-align-right"> 
-            (996) 4316 019
-         </td>
-        </tr>
+ <tr>
+  <td class="invoice-text-align-left bold"> 
+    <%= @billing.name %> S/o or D/o
+  </td>
+  <td class="invoice-text-align-right bold">
+    Order No. : &nbsp;&nbsp;  <%= @billing.order_number %>
+  </td>
+</tr>
 
-    </table>
+<tr> 
+  <td class="invoice-text-align-left">
+    <%= @billing.father_name %>
+  </td>   
+  <td class="invoice-text-align-right"> 
+    Invoice Date : &nbsp;&nbsp; <%= @billing.created_at.strftime("%d %b %Y") %>
+  </td>
+</tr>
+
+<tr>
+ <td class="invoice-text-align-left">
+  <%= @billing.address %>
+</td> 
+<td class="invoice-text-align-right"> 
+  Payment Method : &nbsp;&nbsp;<%= @billing.mode_of_payment %> </div>
+</td>
+</tr>
+
+<tr>
+ <td class="invoice-text-align-left">
+  <%#= @billing.credit_card.billing_address["ba_state"] %> 
+</td> 
+<td class="invoice-text-align-right"> 
+  <!-- (996) 4316 019 -->
+</td>
+</tr>
+
+</table>
 
 </div>

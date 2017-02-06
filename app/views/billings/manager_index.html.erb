@@ -3,6 +3,7 @@
   <div class="well" style="width: 100%;height: auto;margin-top: -15px;">
     <h2 class='heading-fix'> List of Payment Receipts</h2>
     <div>
+      <a href="<%= new_billing_path %>" class='btn btn-normal create-btn-position' style="float : left;">Make Payment</a>
       <a href="<%= admin_path %>" class='btn btn-normal create-btn-position'>Back</a>
     </div>
 
@@ -21,7 +22,7 @@
             <tr>
               <td><%= bill.name %></td>
               <td><%= bill.created_at.strftime("%d-%m-%Y : %T") %></td>
-              <td><%= link_to 'Delete', billing_path(bill), method: :delete, data:{confirm: 'Are you want to delete bill'}, :class=> "text-color-fix" %> |  <%= link_to 'invoice', invoice_path(bill), :class=> 'text-color-fix' %> | <%= link_to 'download', pdf_output_path(bill), :class=> 'text-color-fix' %>
+              <td><%= link_to 'invoice', invoice_path(bill), :class=> 'text-color-fix' %> | <%= link_to 'download', pdf_output_path(bill), :class=> 'text-color-fix' %>
               </td>
             </tr>
           <% end %>
