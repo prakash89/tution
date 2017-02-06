@@ -17,7 +17,6 @@ class BillingsController < ApplicationController
     @billing = Billing.new(billings_params)
     i= (Billing.last && Billing.last.order_number.present?) ? Billing.last.order_number.split('-').last.to_i : 0000
 
-    binding.pry
     @billing.order_number = "INSP" + '-' + Time.now.strftime("%Y%m%d%H%M%S") + '-' + "#{i+1}"
     if @billing.save
       redirect_to manager_index_billings_path
