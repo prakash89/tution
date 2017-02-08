@@ -240,12 +240,12 @@ table th[class*="col-"] {
 }
 .pdf table th.invoice-text-align-left {
     text-align: left;
-    width: 70%
+    width: 50%
 }
 
 .pdf table th.invoice-text-align-right {
     text-align: left;
-    width: 13%
+    width: 35%
 }
 
 .invoice .invoice_table > thead > tr > th,

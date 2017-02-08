@@ -1,12 +1,12 @@
 <div class="invoice">
-
+  
   <table class="table invoice_table border-invoice table-responsive">
 
     <thead>
       <tr class="invoice-th">
-        <th class="push-left">Item</th>
-        <th class="push-left">Description</th>
-        <th class="push-left">Unit Price</th>
+        <th class="push-left">Sl No</th>
+        <th class="push-left">Course</th>
+        <th class="push-left"></th>
         <th class="push-left">Quantity</th>
         <th class="push-left">Amount</th>
       </tr>
@@ -16,23 +16,20 @@
       <tr class="push-left">
         <td style="border-right: none;" class="table-border-right-none">01</td>
         <td class="text-left">
-          <div class="bold">Cource Fee  </div>
-          <div>
-            This is from Managment.
-          </div>
+          <div class="bold"><%= @billing.event.name %></div>
         </td>
-        <td>$&nbsp;<%= @billing.amount %></td>
+        <td>&nbsp;<%#= @billing.amount %></td>
         <td class="invoice-border-left">One</td>
-        <td>$&nbsp;<%= @billing.amount %></td>
+        <td>&nbsp;<%= @billing.amount %></td>
       </tr>
       <tr class="push-left">
         <td rowspan="4" colspan="3"></td>
-        <td class="invoice-border-left">Sub Total</td>
-        <td>$&nbsp;<%= @billing.amount %></td>
+        <!-- <td class="invoice-border-left">Sub Total</td> -->
+        <!-- <td></td> -->
       </tr>
       <tr class="push-left">
-        <td class="invoice-border-left">Discount</td>
-        <td>0.0 </td>
+        <!-- <td class="invoice-border-left">Discount</td>
+        <td>0.0 </td> -->
       </tr>
       <tr class="push-left">
         <td class="invoice-border-left bold">Total</td>
@@ -40,7 +37,7 @@
       </tr>
       <tr class="push-left">
         <td class="invoice-border-left bold">Tax(%)</td>
-        <td class="bold">$ 00.00</td>
+        <td class="bold">00.00</td>
       </tr>
       <tr class="push-left">
         <td></td>
@@ -57,3 +54,4 @@
 
   </table>
 </div>
+

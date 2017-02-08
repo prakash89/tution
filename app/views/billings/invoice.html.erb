@@ -1,6 +1,12 @@
 <div id="content" class="container container-min-height">
-
+	<a herf="" onclick="newDoc()" class="btn btn-normal create-btn-position" style="margin-top: 30px;">Back</a>
   <%#= render partial: "invoice_details.html.erb" %><hr>
   <%= render partial: "to_and_from_address.html.erb" %>
   <%= render partial: "invoice_table.html.erb" %>
 </div>
+
+<script type="text/javascript">
+  function newDoc() {
+    window.location.assign("<%= root_url%>")
+  }
+</script>

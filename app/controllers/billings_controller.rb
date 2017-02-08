@@ -15,10 +15,10 @@ class BillingsController < ApplicationController
 
   def create
     @billing = Billing.new(billings_params)
-    i= (Billing.last && Billing.last.order_number.present?) ? Billing.last.order_number.split('-').last.to_i : 0000
-
-    @billing.order_number = "INSP" + '-' + Time.now.strftime("%Y%m%d%H%M%S") + '-' + "#{i+1}"
     if @billing.save
+      @billing.order_number = "INSP" + '' + Time.now.strftime("%Y%m%d%H%M%S") + '' + "#{@billing.id}"
+      @billing.save
+      MessageMailer.send_invoice_to_admin(current_user.email, @billing).deliver
       redirect_to manager_index_billings_path
     else
       render 'new'
@@ -37,7 +37,7 @@ class BillingsController < ApplicationController
   def pdf_output
     @billing = Billing.find_by_id(params[:id])
 
-    file_name = "mydoc"
+    file_name = "#{@billing.order_number}.pdf"
     @file_path = Rails.root.join(Rails.root, "tmp", file_name)
 
     pdf = WickedPdf.new.pdf_from_string(
@@ -65,6 +65,6 @@ class BillingsController < ApplicationController
   private
 
   def billings_params
-    params.require(:billing).permit(:name, :father_name, :address, :cource_id, :amount, :mode_of_payment, :ref_number)
+    params.require(:billing).permit(:name, :father_name, :address, :event_id, :amount, :mode_of_payment, :ref_number)
   end
 end

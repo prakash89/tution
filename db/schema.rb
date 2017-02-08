@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20170126104205) do
     t.string   "name"
     t.string   "father_name"
     t.string   "address"
-    t.integer  "cource_id"
+    t.integer  "event_id"
     t.float    "amount"
     t.string   "mode_of_payment"
     t.string   "ref_number"

@@ -13,4 +13,11 @@ class MessageMailer < ActionMailer::Base
     mail(:from => @from, :to => @to, :subject => 'Contact information')
   end
 
+  def send_invoice_to_admin from, billing
+    @from = from
+    @to = "prakashthonnur@gmail.com"
+    @billing = billing
+    mail(:from => @from, :to => @to, :subject => 'Payment has done')
+  end
+
 end

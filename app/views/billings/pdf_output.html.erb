@@ -1,11 +1,17 @@
 <div id="content" class="container container-min-height">
 
- 	<%#= render partial: "invoice_details.html.erb" %><hr>
+  <%#= render partial: "invoice_details.html.erb" %><hr>
   <%= render partial: "to_and_from_address.html.erb" %>
   <%= render partial: "invoice_table.html.erb" %>
   <div style="float: right;">
-  	<%= link_to "Download", pdf_download_path(:file_path => @file_path), :class =>"btn btn-primary", target: "_blank" %>
-  	<%= link_to("Print", "javascript:print()", :class => "btn btn-primary print-btn-margin") %>
-  	<a href="<%= root_path %>" class="btn btn-primary"> Cancel </a>
+    <%= link_to "Download", pdf_download_path(:file_path => @file_path), :id => "printdownloadbutton", :class =>"btn btn-primary", target: "_blank" %>
+    <%= link_to("Print", "javascript:print()", :class => "btn btn-primary print-btn-margin", :id => "printpagebutton")  %>
+   <a herf="" onclick="newDoc()" class="btn btn-primary" >Cancel</a>
   </div>
 </div>
+
+<script type="text/javascript">
+  function newDoc() {
+    window.location.assign("<%= root_url%>")
+  }
+</script>
