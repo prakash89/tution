@@ -15,7 +15,7 @@ class MessageMailer < ActionMailer::Base
 
   def send_invoice_to_admin from, billing
     @from = from
-    @to = "prakashthonnur@gmail.com"
+    @to = "inspireacademymysore@gmail.com"
     @billing = billing
     mail(:from => @from, :to => @to, :subject => 'Payment has done')
   end
