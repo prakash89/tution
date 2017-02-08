@@ -10,6 +10,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def authenticate_admin_and_coordinator!
+    unless ((current_user.present?) && (current_user.has_role? :admin) || (current_user.has_role? :coordinator))
+      redirect_to root_path
+    end
+  end
+
   protected
 
   def configure_permitted_parameters

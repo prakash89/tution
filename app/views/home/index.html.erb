@@ -35,7 +35,9 @@
             <li><a href="#contact">Contact</a></li>
             <% if current_user.present? %>
               <li class=""><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-              <li class=""><%= link_to "Payment", manager_index_billings_path, :method => :get %></li>
+              <% if (current_user.has_role? :admin) || (current_user.has_role? :coordinator) %>
+                <li class=""><%= link_to "Payment", manager_index_billings_path, :method => :get %></li>
+              <% end %>
             <% else %>
               <li class=""><%= link_to "Login", new_user_session_path, :method => :get %></li>
             <% end%>

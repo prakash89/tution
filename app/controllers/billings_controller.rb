@@ -1,5 +1,8 @@
 class BillingsController < ApplicationController
   
+  before_filter :authenticate_user!
+  before_filter :authenticate_admin_and_coordinator!
+
   def index
     @billings = Billing.all.order("created_at DESC")
   end
