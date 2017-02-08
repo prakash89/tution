@@ -5,7 +5,7 @@
     <div>
       <a href="" onclick="newDoc()" class='btn btn-normal create-btn-position'>Back</a>
       <div>
-        <% if current_user.has_role? :Admin %>
+        <% if current_user.has_role? :admin %>
           <%= form_for(@document, url: documents_path, :method => "POST", :html => {:multipart => true}) do |f| %>
             <%= f.file_field :report, multiple: true %>
             <%= f.submit "Submit", class: "chose-btn-fix btn btn-normal" %>
@@ -18,7 +18,7 @@
           <div class="fix-document-position">
             <li ><%= link_to ('<i class="fa fa-file-text fa-5x fix-color" aria-hidden="true"></i></br>').html_safe + d.report_identifier, d.report.url, :style => 'text-decoration: none;', target: "_blank", :class => "doc-text-style" %>
               <br/>
-              <% if current_user.has_role? :Admin %>
+              <% if current_user.has_role? :admin %>
                 <%= link_to 'remove', document_path(d), method: :delete, :class => "doc-text-style" %>
               <% end %>
             </li>
